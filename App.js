@@ -1,21 +1,48 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import TopBar from './components/TopBar';
+import ListViewCell from './components/ListViewCell';
+import { StyleSheet, Text, View,StatusBar,ScrollView } from 'react-native';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+      
+      <View 
+        style={styles.a}>
+        <StatusBar  
+          backgroundColor='violet'
+          barStyle='light-content'
+        />
+        <TopBar></TopBar>
+        <ScrollView>
+          <ListViewCell></ListViewCell>  
+          <ListViewCell></ListViewCell>  
+          <ListViewCell></ListViewCell>  
+        </ScrollView>
+
+        <View style={{
+          width:'100%',
+          flex: 1,
+          backgroundColor:'pink'}}>
+        </View>
+        
       </View>
+
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  a: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // flexDirection: 'row',
+    backgroundColor: '#f5f5f5',
+    // alignItems: 'center',
+    // justifyContent: 'space-around',
   },
+
+  box: {
+    width: 50,
+    height: 50,
+  }
 });
